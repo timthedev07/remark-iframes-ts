@@ -24,9 +24,14 @@ export interface Options {
   };
 }
 
-const remarkIframesTS: Plugin<[Options?] | [void], Root> = (
+/**
+ *
+ * @type {Plugin<[Options?] | [void], Root>}
+ */
+export default function remarkIframesTS(
+  this: Plugin<[Options?] | [void], Root>,
   opts: void | Options | undefined
-) => {
+): ReturnType<Plugin<[Options?] | [void], Root>> {
   const t = this as any;
 
   if (!opts) return;
@@ -188,7 +193,7 @@ const remarkIframesTS: Plugin<[Options?] | [void], Root> = (
       nextVisitOrBail();
     });
   };
-};
+}
 
 function computeFinalUrl(provider: any, url: string) {
   let finalUrl = url;
@@ -261,5 +266,3 @@ async function fetchEmbed(url: string) {
       };
     });
 }
-
-export default remarkIframesTS;
