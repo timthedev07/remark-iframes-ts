@@ -1,0 +1,8 @@
+{
+  "name": "remark-iframes-ts",
+  "version": "1.0.0",
+  "description": "Adding iframes to your markdown",
+  "main": "dist/index.js",
+  "author": "Tim <timpersonal07@gmail.com>",
+  "license": "MIT"
+}
