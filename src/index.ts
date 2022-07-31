@@ -1,8 +1,8 @@
 import { format, parse, URLSearchParams } from "url";
 import visit from "unist-util-visit";
 import fetch from "node-fetch";
-import type { Root } from "mdast";
-import type { Plugin } from "unified";
+// import type { Root } from "mdast";
+// import type { Plugin } from "unified";
 
 export interface Options {
   [hostname: string]: {
@@ -25,13 +25,9 @@ export interface Options {
 }
 
 /**
- *
  * @type {Plugin<[Options?] | [void], Root>}
  */
-export default function remarkIframesTS(
-  this: Plugin<[Options?] | [void], Root>,
-  opts: void | Options | undefined
-): ReturnType<Plugin<[Options?] | [void], Root>> {
+function remarkIframesTS(this: any, opts: void | Options | undefined) {
   const t = this as any;
 
   if (!opts) return;
@@ -147,7 +143,7 @@ export default function remarkIframesTS(
     visitors.iframe = (node: any) => `!(${node.src})`;
   }
 
-  return async function transform(tree, vfile, next) {
+  return async function transform(tree: any, vfile: any, next: any) {
     let toVisit = 0;
     (visit as any)(tree, "iframe", () => {
       toVisit++;
@@ -266,3 +262,5 @@ async function fetchEmbed(url: string) {
       };
     });
 }
+
+export default remarkIframesTS;
