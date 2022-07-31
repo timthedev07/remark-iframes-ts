@@ -1,7 +1,7 @@
 {
   "name": "remark-iframes-ts",
   "version": "0.0.1",
-  "description": "Adding iframes to your markdown",
+  "description": "Adding iframes to your markdown with unified.",
   "main": "dist/index.js",
   "author": "Tim <timpersonal07@gmail.com>",
   "license": "MIT",
