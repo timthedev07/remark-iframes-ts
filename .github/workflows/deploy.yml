@@ -4,6 +4,7 @@ on:
     paths:
       - src/**
       - package.json
+      - tsconfig.json
     branches:
       - dev
 
